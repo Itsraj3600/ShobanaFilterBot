@@ -205,7 +205,7 @@ async def start(client, message):
             InlineKeyboardButton('ʀᴇᴘᴏ', url='https://github.com/Itsraj3600/cine')
          ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await message.reply_text("CINE3600FlterBot") 
+        m=await message.reply_text("CINE3600FilterBot") 
         await asyncio.sleep(1.2)
         await m.delete()
         await message.reply_photo(
