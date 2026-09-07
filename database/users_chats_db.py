@@ -1,5 +1,5 @@
 # https://github.com/odysseusmax/animated-lamp/blob/master/bot/database/database.py
-#  @MrMNTG @MusammilN
+#  @Its_Raj3600
 #please give credits https://github.com/Itsraj3600/cine
 import asyncio
 from datetime import datetime

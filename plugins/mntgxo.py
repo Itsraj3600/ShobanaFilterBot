@@ -1,4 +1,4 @@
-#  @MrMNTG @MusammilN 
+#  @Its_Raj3600 
 from pyrogram import filters, Client
 from pyrogram.types import Message
 from utils import JOIN_REQUEST_USERS

@@ -1,4 +1,4 @@
-#  @MrMNTG @MusammilN
+#  @Its_Raj3600
 #please give credits https://github.com/Itsraj3600/cine
 import logging
 from struct import pack

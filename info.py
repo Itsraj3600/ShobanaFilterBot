@@ -84,11 +84,10 @@ FILE_AUTO_DELETE_SECONDS = int(environ.get('FILE_AUTO_DELETE_SECONDS', 60))  # D
 
 
 # Private search guidance
-PM_SEARCH_GROUP_LINK = environ.get('PM_SEARCH_GROUP_LINK', 'https://t.me/MnMoviesLinks/4')
+PM_SEARCH_GROUP_LINK = environ.get('PM_SEARCH_GROUP_LINK', 'https://t.me/cine3600')
 PM_SEARCH_REDIRECT_TEXT = environ.get(
     'PM_SEARCH_REDIRECT_TEXT',
     'Please ask/search movies in our groups.\n'
-    'സിനിമ / സീരീസ് തിരയാൻ ഞങ്ങളുടെ ഗ്രൂപ്പിൽ മെസേജ് അയക്കുക.\n\n'
     '👇 Join / Open Group\n{group_link}'
 )
 DELETE_USER_SEARCH_MESSAGE = is_enabled(environ.get('DELETE_USER_SEARCH_MESSAGE', 'False'), False)

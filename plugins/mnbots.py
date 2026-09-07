@@ -1,4 +1,4 @@
-#  @MrMNTG @MusammilN
+#  @Its_Raj3600
 from pyrogram import Client
 from pyrogram.types import ChatJoinRequest
 from database.users_chats_db import db
@@ -16,4 +16,4 @@ async def join_request_handler(client, update: ChatJoinRequest):
         JOIN_REQUEST_USERS[user_id].add(chat_id)
         await db.add_join_user(user_id, chat_id, update.from_user.first_name or "")
 
-#  @MrMNTG @MusammilN
+#  @Its_Raj3600

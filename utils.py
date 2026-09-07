@@ -1,4 +1,4 @@
-#  @MrMNTG @MusammilN
+#  @Its_Raj3600
 #please give credits https://github.com/Itsraj3600/cine
 
 import logging
@@ -17,7 +17,7 @@ from bs4 import BeautifulSoup
 import requests
 from urllib.parse import quote_plus
 
-#  @MrMNTG @MusammilN
+#  @Its_Raj3600
 #please give credits https://github.com/Itsraj3600/cine
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -46,7 +46,7 @@ class temp(object):
     B_NAME = None
     SETTINGS = {}
 
-#  @MrMNTG @MusammilN
+#  @Its_Raj3600
 #please give credits https://github.com/Itsraj3600/cine
 from pyrogram.enums import ChatMemberStatus
 from database.users_chats_db import db
@@ -144,7 +144,7 @@ async def create_invite_links(client) -> dict:
             links[channel] = link
     return links
 
-#  @MrMNTG @MusammilN
+#  @Its_Raj3600
 #please give credits https://github.com/Itsraj3600/cine
 
 

@@ -1,263 +1,460 @@
 class script(object):
-    START_TXT = """ Hᴇʟʟᴏ {}.
-𝖨𝗆 𝖺𝗇 𝖺𝗎𝗍𝗈 𝖿𝗂𝗅𝗍𝖾𝗋 𝖻𝗈𝗍 𝗐𝗁𝗂𝖼𝗁 𝖼𝖺𝗇 𝗉𝗋𝗈𝗏𝗂𝖽𝖾 𝗆𝗈𝗏𝗂𝖾𝗌 𝗂𝗇 𝗒𝗈𝗎𝗋 𝗀𝗋𝗈𝗎𝗉𝗌.
-+ 𝖠𝖽𝖽 𝖬𝖾 𝖳𝗈 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 + 𝖺𝗇𝖽 𝗉𝗋𝗈𝗆𝗈𝗍𝖾 𝗆𝖾 𝖺𝗌 𝖺𝖽𝗆𝗂𝗇 𝗍𝗈 𝗅𝖾𝗍 𝗆𝖾 𝗀𝖾𝗍 𝗂𝗇 𝖺𝖼𝗍𝗂𝗈𝗇."""
-    HELP_TXT = """
-<b>Hey {} 👋</b>
+    START_TXT = """ʜᴇʏ {}, {}\n\nɪ ᴀᴍ ᴛʜᴇ ᴍᴏꜱᴛ ᴘᴏᴡᴇʀꜰᴜʟ ᴀᴜᴛᴏ ꜰɪʟᴛᴇʀ ʙᴏᴛ ᴡɪᴛʜ ᴘʀᴇᴍɪᴜᴍ ꜰᴇᴀᴛᴜʀᴇꜱ.\n\nᴍᴀɴᴛᴀɪɴᴇᴅ ʙʏ : <a href="https://t.me/its_raj3600">RAJ3600</a>"""
 
-Use the buttons below to browse all features and commands.
-Each help page contains a short list for easy reading.
-"""
-    HELP_PAGES = [
-"""<b>📘 Help (1/6): Core Features</b>
-• Auto filter and manual filter replies
-• IMDB details with poster + metadata
-• Spell-check suggestions for wrong queries
-• File indexing from linked channels
-• Multi-database support (Mongo + SQL)
-• Hyperlink result mode support
-• Connection manager for PM controls
-• File auto-delete and protected delivery
-• Multiple force-sub channels support
-• Inline search and share support""",
-"""<b>📘 Help (2/6): Public Commands</b>
-• /start - Start the bot
-• /movies - Latest added movies
-• /series - Latest added series
-• /connect - Connect group to PM
-• /disconnect - Disconnect active chat
-• /connections - Show your connections
-• /settings - Open group settings
-• /filter or /add - Create manual filter
-• /filters or /viewfilters - List filters
-• /del and /delall - Delete filters""",
-"""<b>📘 Help (3/6): Utility Commands</b>
-• /imdb and /mnsearch - Search movie info
-• /id - Show user/chat id
-• /info - Show user information
-• /bug /bugs /feedback - Send feedback
-• /search - Search from external sources
-• /paste /pasty /tgpaste - Create paste link
-• /short - Shorten URL
-• /tr - Translate replied text
-• /font - Style your text
-• /genpassword or /genpw - Generate password""",
-"""<b>📘 Help (4/6): Media/Extra Commands</b>
-• /tts - Text to speech
-• /carbon - Generate carbon image
-• /stickerid - Get sticker file id
-• /json /js /showjson - Message JSON
-• /img /cup /telegraph - Image to link
-• /share /share_text /sharetext - Share text
-• /echo - Repeat text
-• /pin - Pin replied message
-• /unpin - Unpin a message
-• /unpin_all - Unpin all messages""",
-"""<b>📘 Help (5/6): Group/Admin Commands</b>
-• /promote - Promote user in group
-• /demote - Demote user in group
-• /stats - Show database bot stats
-• /invite - Generate group invite link
-• /ban - Ban a user from bot
-• /unban - Unban a user
-• /leave - Leave a chat
-• /disable - Disable a chat
-• /enable - Enable a chat
-• /deletefiles & /deleteall - Bulk file delete
-• Channel send mode + auto-delete file delivery""",
-"""<b>📘 Help (6/6): Owner/Admin-Only</b>
-• /users - List bot users
-• /chats - List connected chats
-• /channel - List indexed channels
-• /broadcast - Broadcast to users
-• /grpbroadcast - Broadcast to groups
-• /logs - Get recent logs
-• /delete - Delete one indexed file
-• /fsub - Update force-sub channels
-• /restart, /ping, /usage - System tools
-• /set_template, /setskip, /clear_join_users
-• Bot commands auto-sync on startup
-• Auto-update commands: /setupchat /movieupdates /getdlink /sendupnow /getlist"""
-    ]
-    ABOUT_TXT = """<b>
-◎ Cʀᴇᴀᴛᴏʀ: <a href=https://github.com/mntgxo> MN - TG</a>
-◎ Lᴀɴɢᴜᴀɢᴇ: Pʏᴛʜᴏɴ 3
-◎ Dᴀᴛᴀ Bᴀsᴇ: Mᴏɴɢᴏ DB
-◎ Bᴏᴛ Sᴇʀᴠᴇʀ: KoYeb</b>"""
-    SOURCE_TXT = """<b>NOTE:</b>
-- Shobana Filter Bot  is a open source project. 
-- Source - <ahref=https://github.com/Itsraj3600/cine>Click Here to get source code</a>
+    GSTART_TXT = """ʜᴇʏ {},\n\nɪ ᴀᴍ ᴛʜᴇ ᴍᴏꜱᴛ ᴘᴏᴡᴇʀꜰᴜʟ ᴀᴜᴛᴏ ꜰɪʟᴛᴇʀ ʙᴏᴛ ᴡɪᴛʜ ᴘʀᴇᴍɪᴜᴍ ꜰᴇᴀᴛᴜʀᴇꜱ.\n\nᴍᴀɴᴛᴀɪɴᴇᴅ ʙʏ : <a href="https://t.me/its_raj3600">RAJ3600</a>"""
+    
+    HELP_TXT = """<b>ʜᴇʏ {},
+    
+ᴡᴇ ʜᴀᴠᴇ ᴅᴇᴠɪᴅᴇᴅ ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅꜱ ꜰᴏʀ ɢʀᴏᴜᴘ ᴏᴡɴᴇʀꜱ ᴀɴᴅ ʙᴏᴛ ᴜꜱᴇʀꜱ.</b>"""
 
-<b>DEVS:</b>
--<a href=https://github.com/mntg4u> MN - TG</a>"""
-    MANUELFILTER_TXT = """Help: <b>Filters</b>
-- Filter is the feature were users can set automated replies for a particular keyword and shobana will respond whenever a keyword is found the message
-<b>NOTE:</b>
-1. This Bot should have admin privillage.
-2. only admins can add filters in a chat.
-3. alert buttons have a limit of 64 characters.
+    ABOUT_TXT = """<b>‣ ᴍʏ ɴᴀᴍᴇ : {}\n‣ ᴄʀᴇᴀᴛᴏʀ : <a href='https://t.me/ITS_RAJ3600'>RAJ3600 ❤️‍🔥</a>\n‣ ʟɪʙʀᴀʀʏ : ᴘʏʀᴏɢʀᴀᴍ\n‣ ʟᴀɴɢᴜᴀɢᴇ : ᴘʏᴛʜᴏɴ HTML \n‣ ᴅᴀᴛᴀ ʙᴀsᴇ : ᴍᴏɴɢᴏ ᴅʙ\n‣ ʜᴏsᴛᴇᴅ ᴏɴ  : ʜᴇʀᴏᴋᴜ\n‣ ʙᴜɪʟᴅ sᴛᴀᴛᴜs : ᴠ4.2 [sᴛᴀʙʟᴇ]</b>"""
+    
+    CHANNELS = """
+<b>⚡ ɢʀᴏᴜᴘs & ᴄʜᴀɴɴᴇʟs ɪɴғᴏ ⚡ 
 
-<b>Commands and Usage:</b>
-• /filter - <code>add a filter in chat</code>
-• /filters - <code>list all the filters of a chat</code>
-• /del - <code>delete a specific filter in chat</code>
-• /delall - <code>delete the whole filters in a chat (chat owner only)</code>"""
-    BUTTON_TXT = """Help: <b>Buttons</b>
+▫ ᴀʟʟ ɴᴇᴡ ᴍᴏᴠɪᴇs & sᴇʀɪᴇs.
+▫ ғᴀsᴛᴇsᴛ ʙᴏᴛs ᴀʀᴇ ᴀᴅᴅᴇᴅ.
+▫ ғʀᴇᴇ & ᴇᴀsʏ ᴛᴏ ᴜsᴇ.
+▫ 𝟸𝟺x𝟽 sᴇʀᴠɪᴄᴇs ᴀᴠᴀɪʟᴀʙʟᴇ.</b>"""
+    
+    STATUS_TXT = """<b>    
+‣ ᴛᴏᴛᴀʟ ꜰɪʟᴇꜱ : <code>{}</code>
+‣ ᴛᴏᴛᴀʟ ᴜꜱᴇʀꜱ : <code>{}</code>
+‣ ᴛᴏᴛᴀʟ ɢʀᴏᴜᴘꜱ : <code>{}</code>
+‣ ᴜꜱᴇᴅ ꜱᴛᴏʀᴀɢᴇ : <code>{}</code>
+‣ ꜰʀᴇᴇ ꜱᴛᴏʀᴀɢᴇ : <code>{}</code>
+</b>"""
 
-- This Bot Supports both url and alert inline buttons.
-
-<b>NOTE:</b>
-1. Telegram will not allows you to send buttons without any content, so content is mandatory.
-2. This Bot supports buttons with any telegram media type.
-3. Buttons should be properly parsed as markdown format
-
-<b>URL buttons:</b>
-<code>[Button Text](buttonurl:https://github.com/Itsraj3600/cine)</code>
-
-<b>Alert buttons:</b>
-<code>[Button Text](buttonalert:This is an alert message)</code>"""
-    AUTOFILTER_TXT = """
-
-<b>ɴᴏᴛᴇ: Fɪʟᴇ Iɴᴅᴇx</b>
-1. ᴍᴀᴋᴇ ᴍᴇ ᴛʜᴇ ᴀᴅᴍɪɴ ᴏꜰ ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ ɪꜰ ɪᴛ'ꜱ ᴘʀɪᴠᴀᴛᴇ.
-2. ᴍᴀᴋᴇ ꜱᴜʀᴇ ᴛʜᴀᴛ ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ ᴅᴏᴇꜱ ɴᴏᴛ ᴄᴏɴᴛᴀɪɴꜱ ᴄᴀᴍʀɪᴘꜱ, ᴘᴏʀɴ ᴀɴᴅ ꜰᴀᴋᴇ ꜰɪʟᴇꜱ.
-3. ꜰᴏʀᴡᴀʀᴅ ᴛʜᴇ ʟᴀꜱᴛ ᴍᴇꜱꜱᴀɢᴇ ᴛᴏ ᴍᴇ ᴡɪᴛʜ Qᴜᴏᴛᴇꜱ. ɪ'ʟʟ ᴀᴅᴅ ᴀʟʟ ᴛʜᴇ ꜰɪʟᴇꜱ ɪɴ ᴛʜᴀᴛ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴍʏ ᴅʙ.
-
-<b>Nᴏᴛᴇ: AᴜᴛᴏFɪʟᴛᴇʀ</b>
-1. Aᴅᴅ ᴛʜᴇ ʙᴏᴛ ᴀs ᴀᴅᴍɪɴ ᴏɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ.
-2. Usᴇ /connect ᴀɴᴅ ᴄᴏɴɴᴇᴄᴛ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴛᴏ ᴛʜᴇ ʙᴏᴛ.
-3. Usᴇ /settings ᴏɴ ʙᴏᴛ's PM ᴀɴᴅ ᴛᴜʀɴ ᴏɴ AᴜᴛᴏFɪʟᴛᴇʀ ᴏɴ ᴛʜᴇ sᴇᴛᴛɪɴɢs ᴍᴇɴᴜ.."""
-    CONNECTION_TXT = """Help: <b>Connections</b>
-
-- Used to connect bot to PM for managing filters 
-- it helps to avoid spamming in groups.
-
-<b>NOTE:</b>
-1. Only admins can add a connection.
-2. Send <code>/connect</code> for connecting me to ur PM
-
-<b>Commands and Usage:</b>
-• /connect  - <code>connect a particular chat to your PM</code>
-• /disconnect  - <code>disconnect from a chat</code>
-• /connections - <code>list all your connections</code>"""
-    EXTRAMOD_TXT = """Help: <b>Extra Modules</b>
-
-<b>NOTE:</b>
-these are the extra features of CINE3600FlterBot
-
-<b>Commands and Usage:</b>
-• /id - <code>get id of a specified user.</code>
-• /info  - <code>get information about a user.</code>
-• /imdb  - <code>get the film information from IMDb source.</code>
-• /search  - <code>get the film information from various sources.</code>
-• /start - <code>Check I'm Alive.</code>
-• /ping - <code>check ping.</code>
-• /usage - <code>usage of bot.</code>
-• /info - <code>User info .</code>
-• /id - <code>User id  .</code>
-• /broadcast - <code>Broadcast (owner only).</code>
-"""
-    ADMIN_TXT = """Help: <b>Admin mods</b>
-
-<b>NOTE:</b>
-This module only works for my admins
-
-<b>Commands and Usage:</b>
-• /logs - <code>to get the rescent errors</code>
-• /stats - <code>to get status of files in db.</code>
-• /delete - <code>to delete a specific file from db.</code>
-• /users - <code>to get list of my users and ids.</code>
-• /chats - <code>to get list of the my chats and ids </code>
-• /leave  - <code>to leave from a chat.</code>
-• /disable  -  <code>do disable a chat.</code>
-• /ban  - <code>to ban a user.</code>
-• /unban  - <code>to unban a user.</code>
-• /channel - <code>to get list of total connected channels</code>
-• /broadcast - <code>to broadcast a message to all users</code>"""
-    STATUS_TXT = """★ 𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝙻𝙴𝚂: <code>{}</code>
- 𝚃𝙾𝚃𝙰𝙻 𝚄𝚂𝙴𝚁𝚂: <code>{}</code>
- 𝚃𝙾𝚃𝙰𝙻 𝙲𝙷𝙰𝚃𝚂: <code>{}</code>
- 𝚄𝚂𝙴𝙳 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{}</code> 
- 𝙵𝚁𝙴𝙴 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{}</code> """
     LOG_TEXT_G = """#NewGroup
-Group = {}(<code>{}</code>)
-Total Members = <code>{}</code>
-Added By - {}
-"""
-    RESULT_TXT="""Hey {mention} ,     
-Jᴜsᴛ Sᴇᴇ Wʜᴀᴛ I Found Fᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ"""
-
-    CUSTOM_FILE_CAPTION = """📂Fɪʟᴇɴᴀᴍᴇ : {file_name}
-FɪʟᴇSɪᴢᴇ : {file_size}
-
-╔═  ᴊᴏɪɴ ᴡɪᴛʜ ᴜs   ═╗
- Jᴏɪɴ :- [MAIN CHANNEL](https://t.me/cine3600)
- Jᴏɪɴ :- [Movie Group 1](https://t.me/mn_movies3)
- Jᴏɪɴ :- [Movie Group 2](https://t.me/malayalam_movies_group2)
- Jᴏɪɴ :- [Movie Group 3](https://t.me/Netflix_Group3)
- Jᴏɪɴ :- [Movie Group 4](https://t.me/cinima_theerthadana_kendram)
- Jᴏɪɴ :- [Movie Group 5](https://t.me/malayalam_movies_nbot)
- Jᴏɪɴ :- [Movie Group 6](https://t.me/seriesgroups)
- Jᴏɪɴ :- [Movie Group 7](https://t.me/New_indian_cinemas)
-╚═  ᴊᴏɪɴ ᴡɪᴛʜ ᴜs    ═╝
-
-⚠️ <b>This file will be deleted from here within 1 minute as it has copyright ... !!!</b>
-
-<b>കോപ്പിറൈറ്റ് ഉള്ളതുകൊണ്ട് ഫയൽ 1 മിനിറ്റിനുള്ളിൽ ഇവിടെനിന്നും ഡിലീറ്റ് ആകുന്നതാണ് അതുകൊണ്ട് ഇവിടെ നിന്നും മറ്റെവിടെക്കെങ്കിലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക!</b>
-"""
-
     
-    RESTART_GC_TXT = """
-<b>𝖡𝗈𝗍 𝖱𝖾𝗌𝗍𝖺𝗋𝗍𝖾𝖽 !</b>
+Gʀᴏᴜᴘ = {}
+Iᴅ = <code>{}</code>
+Tᴏᴛᴀʟ Mᴇᴍʙᴇʀs = <code>{}</code>
+Aᴅᴅᴇᴅ Bʏ - {}
 
-📅 𝖣𝖺𝗍𝖾 : <code>{}</code>
-⏰ 𝖳𝗂𝗆𝖾 : <code>{}</code>
-🌐 𝖳𝗂𝗆𝖾𝗓𝗈𝗇𝖾 : <code>Asia/Kolkata</code>
-🛠️ 𝖡𝗎𝗂𝗅𝖽 𝖲𝗍𝖺𝗍𝗎𝗌 : <code>𝗏1 [ 𝖲𝗍able ]</code></b>"""
-    
+Bʏ @Cine3600"""
+
     LOG_TEXT_P = """#NewUser
-ID - <code>{}</code>
-Name - {}
-"""
-    SPOLL_NOT_FND="""
-I couldn't find anything related to your request. 
-Try reading the instruction below 
-<blockquote>
-1️ Ask in Correct Spelling
-2️ Don't ask Movies which are not Realased on OTT PLATFORMS
-3️ Possible  ASK [movie name langauge] like this or [movie year] </blockquote>
-OR
-<b> Tʜɪs Mᴏᴠɪᴇ Is Nᴏᴛ Aᴅᴅᴇᴅ Tᴏ DB</b>
-<pre>Report To ADMIN BY USING /bugs command </pre> 
-    """
-#SPELL CHECK LANGUAGES TO KNOW callback
-    ENG_SPELL="""Please Note Below📓
-1️⃣ Ask in Correct Spelling
-2️⃣ Don't ask Movies which are not Realased on OTT PLATFORMS
-3️⃣ Possible  ASK [movie name langauge] like this or [movie year]
-    """
-    MAL_SPELL="""ദയവായി താഴെ ശ്രദ്ധിക്കുക📓
-1️⃣ ശരിയായ അക്ഷരവിന്യാസത്തിൽ ചോദിക്കുക
-2️⃣ OTT പ്ലാറ്റ്‌ഫോമുകളിൽ റിലീസ് ചെയ്യാത്ത സിനിമകൾ ചോദിക്കരുത്
-3️⃣ ഇത് പോലെ [സിനിമയുടെ പേര് ഭാഷ] അല്ലെങ്കിൽ [സിനിമ വർഷം] ചോദിക്കാം
-    """
-    HIN_SPELL="""कृपया नीचे ध्यान दें📓
-1️⃣ सही वर्तनी में पूछें
-2️⃣ उन फिल्मों के बारे में न पूछें जो ओटीटी प्लेटफॉर्म पर रिलीज नहीं हुई हैं
-3️⃣ संभव है पूछें [मूवी का नाम भाषा] इस तरह या [मूवी वर्ष]
-    """
-    TAM_SPELL="""கீழே கவனிக்கவும்📓
-1️⃣ சரியான எழுத்துப்பிழையில் கேளுங்கள்
-2️⃣ வெளியாகாத திரைப்படங்களைக் கேட்காதீர்கள்
-3️⃣ இந்த வடிவத்தில் கேளுங்கள் [திரைப்படத்தின் பெயர், ஆண்டு]
-    """
+    
+Iᴅ - <code>{}</code>
+Nᴀᴍᴇ - {}
 
-    CHK_MOV_ALRT="""♻️ ᴄʜᴇᴄᴋɪɴɢ ꜰɪʟᴇ ᴏɴ ᴍʏ ᴅᴀᴛᴀʙᴀꜱᴇ... ♻️"""
+Bʏ @Cine3600"""
+
+    ALRT_TXT = """ʜᴇʟʟᴏ {},
+ᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ,
+ʀᴇǫᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ..."""
+
+    OLD_ALRT_TXT = """ʜᴇʏ {},
+ʏᴏᴜ ᴀʀᴇ ᴜꜱɪɴɢ ᴏɴᴇ ᴏꜰ ᴍʏ ᴏʟᴅ ᴍᴇꜱꜱᴀɢᴇꜱ, 
+ᴘʟᴇᴀꜱᴇ ꜱᴇɴᴅ ᴛʜᴇ ʀᴇǫᴜᴇꜱᴛ ᴀɢᴀɪɴ."""
+
+    CUDNT_FND = """Sᴘᴇʟʟɪɴɢ Mɪꜱᴛᴀᴋᴇ Bʀᴏ ‼️\nᴅᴏɴ'ᴛ ᴡᴏʀʀʏ 😊 Cʜᴏᴏꜱᴇ ᴛʜᴇ ᴄᴏʀʀᴇᴄᴛ ᴏɴᴇ ʙᴇʟᴏᴡ 👇"""
+
+    I_CUDNT = """<b>sᴏʀʀʏ ɴᴏ ꜰɪʟᴇs ᴡᴇʀᴇ ꜰᴏᴜɴᴅ ꜰᴏʀ ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛ {} 😕
+
+ᴍᴏᴠɪᴇ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ʀᴇᴀsᴏɴ :
+
+1) ᴏ.ᴛ.ᴛ ᴏʀ ᴅᴠᴅ ɴᴏᴛ ʀᴇʟᴇᴀsᴇᴅ
+
+2) ᴛʏᴘᴇ ɴᴀᴍᴇ ᴡɪᴛʜ ʏᴇᴀʀ
+
+3) ᴍᴏᴠɪᴇ ɪs ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ᴛʜᴇ ᴅᴀᴛᴀʙᴀsᴇ ʀᴇᴘᴏʀᴛ ᴛᴏ ᴀᴅᴍɪɴs <a href='https://t.me/+R_wwIlHw0qU0MDVl'>Request Group</a></b>"""
+
+    I_CUD_NT = """<b>ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ {}.
+
+ᴍᴏᴠɪᴇ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ʀᴇᴀsᴏɴ :
+
+1) ᴏ.ᴛ.ᴛ ᴏʀ ᴅᴠᴅ ɴᴏᴛ ʀᴇʟᴇᴀsᴇᴅ
+
+2) ᴛʏᴘᴇ ɴᴀᴍᴇ ᴡɪᴛʜ ʏᴇᴀʀ
+
+3) ᴍᴏᴠɪᴇ ɪs ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ᴛʜᴇ ᴅᴀᴛᴀʙᴀsᴇ ʀᴇᴘᴏʀᴛ ᴛᴏ ᴀᴅᴍɪɴs <a href='https://t.me/+R_wwIlHw0qU0MDVl'>Request Group</a></b>"""
+
+    MVE_NT_FND = """<b>sᴏʀʀʏ ɴᴏ ꜰɪʟᴇs ᴡᴇʀᴇ ꜰᴏᴜɴᴅ ꜰᴏʀ ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛ 😕
+
+ᴍᴏᴠɪᴇ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ʀᴇᴀsᴏɴ :
+
+1) ᴏ.ᴛ.ᴛ ᴏʀ ᴅᴠᴅ ɴᴏᴛ ʀᴇʟᴇᴀsᴇᴅ
+
+2) ᴛʏᴘᴇ ɴᴀᴍᴇ ᴡɪᴛʜ ʏᴇᴀʀ
+
+3) ᴍᴏᴠɪᴇ ɪs ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ᴛʜᴇ ᴅᴀᴛᴀʙᴀsᴇ ʀᴇᴘᴏʀᴛ ᴛᴏ ᴀᴅᴍɪɴs <a href='https://t.me/+R_wwIlHw0qU0MDVl'>Request Group</a></b>"""
     
-    OLD_MES=""" 𝐘𝐨𝐮 𝐚𝐫𝐞 𝐮𝐬𝐢𝐧𝐠 𝐨𝐧𝐞 𝐨𝐟 𝐦𝐲 𝐨𝐥𝐝 𝐦𝐞𝐬𝐬𝐚𝐠𝐞𝐬🤔, 𝐩𝐥𝐞𝐚𝐬𝐞 𝐬𝐞𝐧𝐝 𝐭𝐡𝐞 𝐫𝐞𝐪𝐮𝐞𝐬𝐭 𝐚𝐠𝐚𝐢𝐧"""
+
+    TOP_ALRT_MSG = """ꜱᴇᴀʀᴄʜɪɴɢ ꜰᴏʀ ǫᴜᴇʀʏ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀꜱᴇ..."""
+
+    MELCOW_ENG = """<b>👋 ʜᴇʏ {},\n\n🍁 ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ\n🌟 {} \n\n🔍 ʜᴇʀᴇ ʏᴏᴜ ᴄᴀɴ ꜱᴇᴀʀᴄʜ ʏᴏᴜʀ ꜰᴀᴠᴏᴜʀɪᴛᴇ ᴍᴏᴠɪᴇꜱ ᴏʀ ꜱᴇʀɪᴇꜱ ʙʏ ᴊᴜꜱᴛ ᴛʏᴘɪɴɢ ɪᴛ'ꜱ ɴᴀᴍᴇ 🔎\n\n⚠️ ɪꜰ ʏᴏᴜ'ʀᴇ ʜᴀᴠɪɴɢ ᴀɴʏ ᴘʀᴏʙʟᴇᴍ ʀᴇɢᴀʀᴅɪɴɢ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴏʀ ꜱᴏᴍᴇᴛʜɪɴɢ ᴇʟꜱᴇ ᴛʜᴇɴ ᴍᴇꜱꜱᴀɢᴇ ʜᴇʀᴇ 👇</b>"""
+
+    DISCLAIMER_TXT = """
+<b>ᴛʜɪꜱ ɪꜱ ᴀɴ ᴏᴘᴇɴ ꜱᴏᴜʀᴄᴇ ᴘʀᴏᴊᴇᴄᴛ.
+
+ᴀʟʟ ᴛʜᴇ ꜰɪʟᴇꜱ ɪɴ ᴛʜɪꜱ ʙᴏᴛ ᴀʀᴇ ꜰʀᴇᴇʟʏ ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛʜᴇ ɪɴᴛᴇʀɴᴇᴛ ᴏʀ ᴘᴏꜱᴛᴇᴅ ʙʏ ꜱᴏᴍᴇʙᴏᴅʏ ᴇʟꜱᴇ. ᴊᴜꜱᴛ ꜰᴏʀ ᴇᴀꜱʏ ꜱᴇᴀʀᴄʜɪɴɢ ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ɪɴᴅᴇxɪɴɢ ꜰɪʟᴇꜱ ᴡʜɪᴄʜ ᴀʀᴇ ᴀʟʀᴇᴀᴅʏ ᴜᴘʟᴏᴀᴅᴇᴅ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ. ᴡᴇ ʀᴇꜱᴘᴇᴄᴛ ᴀʟʟ ᴛʜᴇ ᴄᴏᴘʏʀɪɢʜᴛ ʟᴀᴡꜱ ᴀɴᴅ ᴡᴏʀᴋꜱ ɪɴ ᴄᴏᴍᴘʟɪᴀɴᴄᴇ ᴡɪᴛʜ ᴅᴍᴄᴀ ᴀɴᴅ ᴇᴜᴄᴅ. ɪꜰ ᴀɴʏᴛʜɪɴɢ ɪꜱ ᴀɢᴀɪɴꜱᴛ ʟᴀᴡ ᴘʟᴇᴀꜱᴇ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ꜱᴏ ᴛʜᴀᴛ ɪᴛ ᴄᴀɴ ʙᴇ ʀᴇᴍᴏᴠᴇᴅ ᴀꜱᴀᴘ. ɪᴛ ɪꜱ ꜰᴏʀʙɪʙʙᴇɴ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ, ꜱᴛʀᴇᴀᴍ, ʀᴇᴘʀᴏᴅᴜᴄᴇ, ꜱʜᴀʀᴇ ᴏʀ ᴄᴏɴꜱᴜᴍᴇ ᴄᴏɴᴛᴇɴᴛ ᴡɪᴛʜᴏᴜᴛ ᴇxᴘʟɪᴄɪᴛ ᴘᴇʀᴍɪꜱꜱɪᴏɴ ꜰʀᴏᴍ ᴛʜᴇ ᴄᴏɴᴛᴇɴᴛ ᴄʀᴇᴀᴛᴏʀ ᴏʀ ʟᴇɢᴀʟ ᴄᴏᴘʏʀɪɢʜᴛ ʜᴏʟᴅᴇʀ. ɪꜰ ʏᴏᴜ ʙᴇʟɪᴇᴠᴇ ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ᴠɪᴏʟᴀᴛɪɴɢ ʏᴏᴜʀ ɪɴᴛᴇʟʟᴇᴄᴛᴜᴀʟ ᴘʀᴏᴘᴇʀᴛʏ, ᴄᴏɴᴛᴀᴄᴛ ᴛʜᴇ ʀᴇꜱᴘᴇᴄᴛɪᴠᴇ ᴄʜᴀɴɴᴇʟꜱ ꜰᴏʀ ʀᴇᴍᴏᴠᴀʟ. ᴛʜᴇ ʙᴏᴛ ᴅᴏᴇꜱ ɴᴏᴛ ᴏᴡɴ ᴀɴʏ ᴏꜰ ᴛʜᴇꜱᴇ ᴄᴏɴᴛᴇɴᴛꜱ, ɪᴛ ᴏɴʟʏ ɪɴᴅᴇx ᴛʜᴇ ꜰɪʟᴇꜱ ꜰʀᴏᴍ ᴛᴇʟᴇɢʀᴀᴍ. 
+
+🌿 ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://t.me/its_raj3600'>RAJ3600</a></b>"""
+
+    USERS_TXT = """👋 ʜᴇʏ {},
+
+📚 ʜᴇʀᴇ ᴀʀᴇ ᴍʏ ᴄᴏᴍᴍᴀɴᴅꜱ ʟɪꜱᴛ ꜰᴏʀ ᴀʟʟ ʙᴏᴛ ᴜꜱᴇʀꜱ ⇊
     
-    MOV_NT_FND="""<b>Tʜɪs Mᴏᴠɪᴇ Is Nᴏᴛ Yᴇᴛ Rᴇᴀʟᴇsᴇᴅ Oʀ Aᴅᴅᴇᴅ Tᴏ DB</b>
-<pre>Report To ADMIN BY USING /bugs command </pre> 
+• /batch - ᴄʀᴇᴀᴛᴇ ᴀ ʙᴀᴛᴄʜ ʟɪɴᴋ ᴏғ ᴍᴜʟᴛɪᴘʟᴇ ғɪʟᴇs.
+• /link - ᴄʀᴇᴀᴛᴇ ᴀ sɪɴɢʟᴇ ғɪʟᴇ sᴛᴏʀᴇ ʟɪɴᴋ.
+• /pbatch - ᴊᴜsᴛ ʟɪᴋᴇ <code>/batch</code>, ʙᴜᴛ ᴛʜᴇ ғɪʟᴇs ᴡɪʟʟ ʙᴇ sᴇɴᴅ ᴡɪᴛʜ ғᴏʀᴡᴀʀᴅ ʀᴇsᴛʀɪᴄᴛɪᴏɴs.
+• /plink - ᴊᴜsᴛ ʟɪᴋᴇ <code>/link</code>, ʙᴜᴛ ᴛʜᴇ ғɪʟᴇ ᴡɪʟʟ ʙᴇ sᴇɴᴅ ᴡɪᴛʜ ғᴏʀᴡᴀʀᴅ ʀᴇsᴛʀɪᴄᴛɪᴏɴ.
+• /id - ɢᴇᴛ ɪᴅ ᴏꜰ ᴀ ꜱᴘᴇᴄɪꜰɪᴇᴅ ᴜꜱᴇʀ.
+• /info  - ɢᴇᴛ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴜꜱᴇʀ.
+• /imdb  - ɢᴇᴛ ᴛʜᴇ ꜰɪʟᴍ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ꜰʀᴏᴍ ɪᴍᴅʙ ꜱᴏᴜʀᴄᴇ.
+• /search  - ɢᴇᴛ ᴛʜᴇ ꜰɪʟᴍ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ꜰʀᴏᴍ ᴠᴀʀɪᴏᴜꜱ ꜱᴏᴜʀᴄᴇꜱ.
+• /stats - ɢᴇᴛ ꜱᴛᴀᴛᴜꜱ ᴏꜰ ꜰɪʟᴇꜱ ɪɴ ᴅʙ.
+• /request - sᴇɴᴅ ᴀ Mᴏᴠɪᴇ/Sᴇʀɪᴇs ʀᴇᴏ̨ᴜᴇsᴛ ᴛᴏ ʙᴏᴛ ᴀᴅᴍɪɴs. ( ᴏɴʟʏ ᴡᴏʀᴋs ᴏɴ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ )
+• /plan - ᴄʜᴇᴄᴋ ᴀᴠᴀɪʟᴀʙʟᴇ ᴘʀᴇᴍɪᴜᴍ ᴍᴇᴍʙᴇʀꜱʜɪᴘ ᴘʟᴀɴꜱ.
+• /myplan - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴜɴᴛ ᴘʟᴀɴ."""
+
+    GROUP_TXT = """👋 ʜᴇʏ {},
+
+📚 ʜᴇʀᴇ ᴀʀᴇ ᴍʏ ᴄᴏᴍᴍᴀɴᴅꜱ ʟɪꜱᴛ ꜰᴏʀ ᴀʟʟ ɢʀᴏᴜᴘ ᴏᴡɴᴇʀꜱ ⇊
+    
+• /connect  - ᴄᴏɴɴᴇᴄᴛ ᴀ ᴘᴀʀᴛɪᴄᴜʟᴀʀ ᴄʜᴀᴛ ᴛᴏ ʏᴏᴜʀ ᴘᴍ.
+• /disconnect  - ᴅɪꜱᴄᴏɴɴᴇᴄᴛ ꜰʀᴏᴍ ᴀ ᴄʜᴀᴛ.
+• /shortlink - ᴄᴏɴɴᴇᴄᴛ ʏᴏᴜʀ ꜱʜᴏʀᴛɴᴇʀ ᴡᴇʙꜱɪᴛᴇ.
+• /set_tutorial - ꜱᴇᴛ ʏᴏᴜʀ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ.
+• /remove_tutorial - ꜱᴇᴛ ʏᴏᴜʀ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ.
+• /shortlink_info - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ɢʀᴏᴜᴘ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ.
+• /setshortlinkon - ᴏɴ ꜱʜᴏʀᴛʟɪɴᴋ ꜰᴏʀ ʏᴏᴜʀ ɢʀᴏᴜᴘ.
+• /setshortlinkoff - ᴏꜰꜰ ꜱʜᴏʀᴛʟɪɴᴋ ꜰᴏʀ ʏᴏᴜʀ ɢʀᴏᴜᴘ.
+• /connections - ʟɪꜱᴛ ᴀʟʟ ʏᴏᴜʀ ᴄᴏɴɴᴇᴄᴛɪᴏɴꜱ.
+• /settings - ᴄʜᴀɴɢᴇ sᴇᴛᴛɪɴɢs ᴀs ʏᴏᴜʀ ᴡɪsʜ.
+• /filter - ᴀᴅᴅ ᴀ ꜰɪʟᴛᴇʀ ɪɴ ᴀ ɢʀᴏᴜᴘ.
+• /filters - ʟɪꜱᴛ ᴀʟʟ ᴛʜᴇ ꜰɪʟᴛᴇʀꜱ ᴏꜰ ᴀ ɢʀᴏᴜᴘ.
+• /del - ᴅᴇʟᴇᴛᴇ ᴀ ꜱᴘᴇᴄɪꜰɪᴄ ꜰɪʟᴛᴇʀ ɪɴ ᴀ ɢʀᴏᴜᴘ.
+• /delall - ᴅᴇʟᴇᴛᴇ ᴛʜᴇ ᴡʜᴏʟᴇ ꜰɪʟᴛᴇʀꜱ ɪɴ ᴀ ɢʀᴏᴜᴘ.
+• /purge - ᴅᴇʟᴇᴛᴇ ᴀʟʟ ᴍᴇssᴀɢᴇs ꜰʀᴏᴍ ᴛʜᴇ ʀᴇᴘʟɪᴇᴅ ᴛᴏ ᴍᴇssᴀɢᴇ, ᴛᴏ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴍᴇssᴀɢᴇ."""
+
+    ADMIC_TXT = """👋 ʜᴇʏ {},
+
+📚 ʜᴇʀᴇ ᴀʀᴇ ᴍʏ ᴄᴏᴍᴍᴀɴᴅꜱ ʟɪꜱᴛ ꜰᴏʀ ᴀʟʟ ʙᴏᴛ ᴀᴅᴍɪɴꜱ ⇊
+    
+• /logs - <code>ɢᴇᴛ ᴛʜᴇ ʀᴇᴄᴇɴᴛ ᴇʀʀᴏʀꜱ.</code>
+• /delete - <code>ᴅᴇʟᴇᴛᴇ ᴀ ꜱᴘᴇᴄɪꜰɪᴄ ꜰɪʟᴇ ꜰʀᴏᴍ ᴅʙ.</code>
+• /users - <code>ɢᴇᴛ ʟɪꜱᴛ ᴏꜰ ᴍʏ ᴜꜱᴇʀꜱ ᴀɴᴅ ɪᴅꜱ.</code>
+• /chats - <code>ɢᴇᴛ ʟɪꜱᴛ ᴏꜰ ᴍʏ ᴄʜᴀᴛꜱ ᴀɴᴅ ɪᴅꜱ.</code>
+• /leave  - <code>ʟᴇᴀᴠᴇ ꜰʀᴏᴍ ᴀ ᴄʜᴀᴛ.</code>
+• /disable  -  <code>ᴅɪꜱᴀʙʟᴇ ᴀ ᴄʜᴀᴛ.</code>
+• /ban  - <code>ʙᴀɴ ᴀ ᴜꜱᴇʀ.</code>
+• /unban  - <code>ᴜɴʙᴀɴ ᴀ ᴜꜱᴇʀ.</code>
+• /channel - <code>ɢᴇᴛ ʟɪꜱᴛ ᴏꜰ ᴛᴏᴛᴀʟ ᴄᴏɴɴᴇᴄᴛᴇᴅ ɢʀᴏᴜᴘꜱ.</code>
+• /broadcast - <code>ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴀ ᴍᴇꜱꜱᴀɢᴇ ᴛᴏ ᴀʟʟ ᴜꜱᴇʀꜱ.</code>
+• /grp_broadcast - <code>ʙʀᴏᴀᴅᴄᴀsᴛ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ᴀʟʟ ᴄᴏɴɴᴇᴄᴛᴇᴅ ɢʀᴏᴜᴘs.</code>
+• /gfilter - <code>ᴀᴅᴅ ɢʟᴏʙᴀʟ ғɪʟᴛᴇʀs.</code>
+• /gfilters - <code>ᴠɪᴇᴡ ʟɪsᴛ ᴏғ ᴀʟʟ ɢʟᴏʙᴀʟ ғɪʟᴛᴇʀs.</code>
+• /delg - <code>ᴅᴇʟᴇᴛᴇ ᴀ sᴘᴇᴄɪғɪᴄ ɢʟᴏʙᴀʟ ғɪʟᴛᴇʀ.</code>
+• /delallg - <code>ᴅᴇʟᴇᴛᴇ ᴀʟʟ Gғɪʟᴛᴇʀs ғʀᴏᴍ ᴛʜᴇ ʙᴏᴛ's ᴅᴀᴛᴀʙᴀsᴇ.</code>
+• /deletefiles - <code>ᴅᴇʟᴇᴛᴇ CᴀᴍRɪᴘ ᴀɴᴅ PʀᴇDVD ғɪʟᴇs ғʀᴏᴍ ᴛʜᴇ ʙᴏᴛ's ᴅᴀᴛᴀʙᴀsᴇ.</code>
+• /send - <code>ꜱᴇɴᴅ ᴍᴇꜱꜱᴀɢᴇ ᴛᴏ ᴀ ᴘᴀʀᴛɪᴄᴜʟᴀʀ ᴜꜱᴇʀ.</code>
+• /add_premium - <code>ᴀᴅᴅ ᴀɴʏ ᴜꜱᴇʀ ᴛᴏ ᴘʀᴇᴍɪᴜᴍ.</code>
+• /remove_premium - <code>ʀᴇᴍᴏᴠᴇ ᴀɴʏ ᴜꜱᴇʀ ꜰʀᴏᴍ ᴘʀᴇᴍɪᴜᴍ.</code>
+• /premium_users - <code>ɢᴇᴛ ʟɪꜱᴛ ᴏꜰ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀꜱ.</code>
+• /get_premium - <code>ɢᴇᴛ ɪɴꜰᴏ ᴏꜰ ᴀɴʏ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀ.</code>
+• /restart - <code>ʀᴇꜱᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ.</code>"""
+
+    SHORTLINK_INFO = """<b>
+ ❗<u>ʜᴏᴡ ᴛᴏ ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴜꜱɪɴɢ ʙᴏᴛ</u>❗
+
+★ ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ꜱᴛᴀʀᴛ ᴇᴀʀɴɪɴɢ 💸 ᴍᴏɴᴇʏ ᴛᴏᴅᴀʏ ᴡɪᴛʜ ᴏᴜʀ ꜱɪᴍᴘʟᴇ ᴀɴᴅ ᴇᴀꜱʏ-ᴛᴏ-ᴜꜱᴇ ʙᴏᴛ!
+
+›› ꜱᴛᴇᴘ 1 : ᴀᴅᴅ ᴛʜɪꜱ ʙᴏᴛ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀꜱ ᴀɴ ᴀᴅᴍɪɴ...
+
+›› ꜱᴛᴇᴘ 2 : ᴜꜱᴇ /connect ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ʙᴏᴛ ᴛᴏ ʏᴏᴜʀ ᴘᴍ.
+
+›› ꜱᴛᴇᴘ 3 : ᴄʟɪᴄᴋ ᴏɴ ɴᴇxᴛ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴋɴᴏᴡ ʜᴏᴡ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ꜱʜᴏʀᴛʟɪɴᴋ ᴡᴇʙꜱɪᴛᴇ ᴡɪᴛʜ ᴛʜɪs ʙᴏᴛ.
+
+★ ᴅᴏɴ'ᴛ ᴡᴀɪᴛ ᴀɴʏ ʟᴏɴɢᴇʀ ᴛᴏ ꜱᴛᴀʀᴛ ᴇᴀʀɴɪɴɢ ᴍᴏɴᴇʏ ꜰʀᴏᴍ ʏᴏᴜʀ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘ. ᴀᴅᴅ ᴏᴜʀ ʙᴏᴛ ᴛᴏᴅᴀʏ ᴀɴᴅ ꜱᴛᴀʀᴛ ᴍᴀᴋɪɴɢ ᴍᴏɴᴇʏ 💰! </b>
 """
+
+    SHORTLINK_INFO2 = """<b>
+❗<u>ʜᴏᴡ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ʏᴏᴜʀ sʜᴏʀᴛɴᴇʀ</u>❗
+
+›› ꜱᴛᴇᴘ 4 : ɪꜰ ʏᴏᴜ ᴅᴏɴ'ᴛ ᴜꜱɪɴɢ ᴀɴʏ ꜱʜᴏʀᴛɴᴇʀ ᴡᴇʙꜱɪᴛᴇ ᴛʜᴇɴ ᴍᴀᴋᴇ ᴀᴄᴄᴏᴜɴᴛ ꜰɪʀꜱᴛ ᴏɴ instantearn.in (ʏᴏᴜ ᴄᴀɴ ᴀʟꜱᴏ ᴜꜱᴇ ᴏᴛʜᴇʀ ʟɪɴᴋ ꜱʜᴏʀᴛɴᴇʀ ᴡᴇʙꜱɪᴛᴇ).
+
+›› ꜱᴛᴇᴘ 5 : ᴄᴏᴘʏ ʏᴏᴜʀ ᴀᴘɪ ꜰʀᴏᴍ ᴡᴇʙꜱɪᴛᴇ ᴀɴᴅ ᴛʜᴇɴ, ꜱɪᴍᴘʟʏ ꜱᴇᴛ ʏᴏᴜʀ ᴡᴇʙꜱɪᴛᴇ ᴀɴᴅ ᴀᴘɪ ᴜꜱɪɴɢ ᴛʜᴇ /shortlink ᴄᴏᴍᴍᴀɴᴅ.
+
+› ʟɪᴋᴇ ᴛʜɪꜱ :</b>  <code>/shortlink CINE3600.COM 1502a197c85d59929d50f1cba1d5e6f967d1e962</code>
+
+<b>›› ꜱᴛᴇᴘ 6 : ᴄʟɪᴄᴋ ᴏɴ ɴᴇxᴛ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴋɴᴏᴡ ʜᴏᴡ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ʏᴏᴜʀ ᴛᴜᴛᴏʀɪᴀʟ ᴡɪᴛʜ ᴛʜɪs ʙᴏᴛ.
+
+★ ᴛʜɪꜱ ʙᴏᴛ ᴡɪʟʟ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴄᴏɴᴠᴇʀᴛꜱ ʟɪɴᴋꜱ ᴡɪᴛʜ ʏᴏᴜʀ ᴀᴘɪ ᴀɴᴅ ᴡɪʟʟ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜʀ ʟɪɴᴋꜱ.</b>
+"""
+    SHORTLINK_INFO3 = """<b>
+❗<u>ʜᴏᴡ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ʏᴏᴜʀ ᴛᴜᴛᴏʀɪᴀʟ</u>❗
+
+›› ꜱᴛᴇᴘ 7 : ᴜꜱᴇ /set_tutorial ᴛᴏ ᴀᴅᴅ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ ꜰᴏʀ ʏᴏᴜʀ ꜱʜᴏʀᴛɴᴇʀ ᴡᴇʙꜱɪᴛᴇ.
+
+› ʟɪᴋᴇ ᴛʜɪꜱ :</b> <code>/set_tutorial https://t.me/HowToOpenLink</code>
+
+<b>›› ꜱᴛᴇᴘ 8 : ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴄʜᴇᴄᴋ ᴡʜɪᴄʜ sʜᴏʀᴛᴇɴᴇʀ ʏᴏᴜ ʜᴀᴠᴇ ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴛʜᴇɴ sᴇɴᴅ /shortlink_info ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ.
+
+★ ᴛʜᴀᴛ'ꜱ ɪᴛ, ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴇᴀʀɴ ᴀ ʟᴏᴛ ᴍᴏɴᴇʏ 💸 ᴜꜱɪɴɢ ᴛʜɪs ʙᴏᴛ.</b>
+"""
+    
+    SELECT = """
+➢ ᴄʟɪᴄᴋ ᴏɴ "ǫᴜᴀʟɪᴛʏ" ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ꜰɪʟᴇ ɪɴ ʏᴏᴜʀ ᴅᴇꜱɪʀᴇᴅ ǫᴜᴀʟɪᴛʏ.
+➢ ᴄʟɪᴄᴋ ᴏɴ "ʟᴀɴɢᴜᴀɢᴇ" ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ꜰɪʟᴇ ɪɴ ʏᴏᴜʀ ᴅᴇꜱɪʀᴇᴅ ʟᴀɴɢᴜᴀɢᴇ.
+➢ ᴄʟɪᴄᴋ ᴏɴ "ꜱᴇᴀꜱᴏɴ" ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ꜰɪʟᴇ ɪɴ ʏᴏᴜʀ ᴅᴇꜱɪʀᴇᴅ ꜱᴇᴀꜱᴏɴ.
+
+➢ ᴄʟɪᴄᴋ ᴏɴ "♨️ ꜱᴇɴᴅ ᴀʟʟ ꜰɪʟᴇꜱ ♨️" ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ᴀʟʟ ꜰɪʟᴇꜱ ɪɴ ᴀ ꜱɪɴɢʟᴇ ᴄʟɪᴄᴋ.
+
+✯ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : ʜᴘ
+"""
+
+    REQINFO = """➢ ᴄʟɪᴄᴋ "ǫᴜᴀʟɪᴛʏ" ᴀɴᴅ ᴄʜᴀɴɢᴇ ǫᴜᴀʟɪᴛʏ.
+➢ ᴄʟɪᴄᴋ "ʟᴀɴɢᴜᴀɢᴇ" ᴀɴᴅ ᴄʜᴀɴɢᴇ ʟᴀɴɢᴜᴀɢᴇ.
+➢ ᴄʟɪᴄᴋ "ꜱᴇᴀꜱᴏɴ" ᴀɴᴅ ᴄʜᴀɴɢᴇ ꜱᴇᴀꜱᴏɴ.
+➢ ᴄʟɪᴄᴋ "♨️ ꜱᴇɴᴅ ᴀʟʟ ꜰɪʟᴇꜱ ♨️" ᴀɴᴅ ɢᴇᴛ ᴀʟʟ ꜰɪʟᴇꜱ."""
+
+    SINFO = """
+⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+ꜱᴇʀɪᴇꜱ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ
+⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+
+ɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ꜱᴇʀɪᴇꜱ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ
+
+ᴇxᴀᴍᴘʟᴇ : MR ROBOT S01E01
+
+🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)"""
+
+    NORSLTS = """ 
+#NoResults
+
+Iᴅ : <code>{}</code>
+Nᴀᴍᴇ : {}
+
+Mᴇꜱꜱᴀɢᴇ : <b>{}</b>"""
+
+    # PLESE DO NOT REMOVE ANY CREDITS ❤️‍🩹
+    CREDITS_TXT = """<b>
+❤️‍🩹 <u>ꜱᴘᴇᴄɪᴀʟ ᴛʜᴀɴᴋꜱ ᴛᴏ ᴇᴠᴇʀʏᴏɴᴇ</u>
+
+• ᴍᴀɪɴ ᴏᴡɴᴇʀ : <a href="https://t.me/its_raj3600">Raj3600</a>
+• ʙᴀꜱᴇ ʀᴇᴘᴏ : <a href="https://t.me/creatorbeatz">Jᴏᴇʟ ᠰ TɢX</a>
+• sᴛʀᴇᴀᴍ ғᴇᴀᴛᴜʀᴇ : <a href="https://t.me/LazyDeveloperr">LazyDeveloper</a>
+• sᴛʀᴇᴀᴍ ᴡᴇʙꜱɪᴛᴇ : <a href="https://t.me/Biisal">Bɪɪsᴀʟ</a>
+• ᴘʀᴇᴍɪᴜᴍ ᴄᴏᴅᴇꜱ : <a href="https://t.me/Rk_botowner">Rɪꜱʜɪᴋᴇꜱʜ</a>
+• ᴡᴇʟᴄᴏᴍᴇ ᴀɴɪᴍᴀᴛɪᴏɴ : <a href="https://t.me/Xavier_707">𝑿𝒂𝒗𝒊𝒆𝒓</a>
+• ꜱᴛʀᴇᴀᴍ ꜱʜᴏʀᴛʟɪɴᴋ : <a href="https://t.me/Mr_SPIDY">⚝𝗠𝗿.𝗦𝗣𝗜𝗗𝗬⚝</a>
+
+ɪ ᴀᴍ ꜱᴏʀʀʏ ɪꜰ ɪ ꜰᴏʀɢᴏᴛ ꜱᴏᴍᴇᴏɴᴇ 🫂
+ᴛʜᴀɴᴋ ʏᴏᴜ ꜰᴏʀ ʜᴇʟᴘɪɴɢ ɪɴ ᴛʜɪꜱ ᴀᴍᴀᴢɪɴɢ ʀᴏʟʟᴇʀ ᴄᴏᴀꜱᴛᴇʀ ᴊᴏᴜʀɴᴇʏ 🚀</b>
+""" 
+   # PLEASE DO NOT REMOVE ANY CREDITS ❤️‍🩹
+    
+    CAPTION = """ 📂 <i><a href="https://telegram.me/CINE3600">{file_name}</a></i>\n\n"""
+
+    IMDB_TEMPLATE_TXT = """
+<b>ʜᴇʏ {message.from_user.mention}, ʜᴇʀᴇ ɪꜱ ᴛʜᴇ ʀᴇꜱᴜʟᴛꜱ ꜰᴏʀ ʏᴏᴜʀ ǫᴜᴇʀʏ {search}.
+
+🧿 {title}</b>
+
+<b>⭐ {rating} | ⏰ {runtime} Minutes
+📆 {release_date}
+🕵️ {director}
+
+●  {languages}
+●  {genres}
+
+📖 {plot}
+
+💗 ᴘᴏᴡᴇʀᴇᴅ ʙʏ : {message.chat.title}</b>
+"""
+    
+
     RESTART_TXT = """
-<b><u>𝖡𝗈𝗍 𝖱𝖾𝗌𝗍𝖺𝗋𝗍𝖾𝖽 ✅</u></b>"""
+<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
+
+📅 Dᴀᴛᴇ : <code>{}</code>
+⏰ Tɪᴍᴇ : <code>{}</code>
+🌐 Tɪᴍᴇᴢᴏɴᴇ : <code>Asia/Kolkata</code>
+🛠️ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: <code>v4.2 [ Sᴛᴀʙʟᴇ ]</code>
+
+Bʏ @CINE3600</b>"""
+
+    LOGO = """
+
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░█████████╗███╗████╗░░███╗█████████╗░░░░░░░░░░░░█████████╗█████████╗░████████╗░░████████╗░░
+░███╔═════╝███║█████╗░███║███╔═════╝░░░░░░░░░░░░╚═════███║███╔═════╝███╔═══███╗███╔═══███╗░
+░███║░░░░░░███║███╔██╗███║███████╗░░░░███████╗░░░████████║█████████╗███║░░░███║███║░░░███║░
+░███║░░░░░░███║███║██║███║███╔═══╝░░░░╚══════╝░░░╚════███║███╔══███║███║░░░███║███║░░░███║░
+░███║░░░░░░███║███║╚█████║███║░░░░░░░░░░░░░░░░░░░░░░░░███║███║░░███║███║░░░███║███║░░░███║░
+░█████████╗███║███║░╚████║█████████╗░░░░░░░░░░░░█████████║█████████║╚████████╔╝╚████████╔╝░
+░╚════════╝╚══╝╚══╝░░╚═══╝╚════════╝░░░░░░░░░░░░╚════════╝╚════════╝░╚═══════╝░░╚═══════╝░░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░"""
+
+    #PLANS
+
+    PAGE_TXT = """ENJOY WATCHING YOUR CONTENT!"""
+
+    PURCHASE_TXT = """ꜱᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ᴍᴇᴛʜᴏᴅ."""
+
+    PREMIUM_TEXT = """<b>👋 ʜᴇʏ {},
+    
+🎖️ <u>ᴀᴠᴀɪʟᴀʙʟᴇ ᴘʟᴀɴs</u>
+
+● <code>10₹</code> ➛ <u>ʙʀᴏɴᴢᴇ ᴘʟᴀɴ</u> » <code>7 ᴅᴀʏꜱ</code>
+● <code>30₹</code> ➛ <u>ꜱɪʟᴠᴇʀ ᴘʟᴀɴ</u> » <code>30 ᴅᴀʏꜱ</code>
+● <code>90₹</code> ➛ <u>ɢᴏʟᴅ ᴘʟᴀɴ</u> » <code>90 ᴅᴀʏꜱ</code>
+● <code>150₹</code> ➛ <u>ᴘʟᴀᴛɪɴᴜᴍ ᴘʟᴀɴ</u> » <code>180 ᴅᴀʏꜱ</code>
+● <code>300₹</code> ➛ <u>ᴅɪᴀᴍᴏɴᴅ ᴘʟᴀɴ</u> » <code>365 ᴅᴀʏꜱ</code>
+
+💵 ᴜᴘɪ ɪᴅ (INR)- <code>itsraj3600@oksbi</code>
+💵 PAYPAL (CAD)- <code>https://paypal.me/itsraj3600?country.x=CA&locale.x=en_US</code>
+📸 ǫʀ ᴄᴏᴅᴇ - <a href='https://telegra.ph/PAYMENTS-CENTRE-03-08'>ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ꜱᴄᴀɴ</a>
+
+⚜️ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan
+
+‼️ ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.</b>"""
+
+    CPREMIUM_TEXT = """<b>👋 ʜᴇʏ {},
+    
+🎖️ <u>ᴀᴠᴀɪʟᴀʙʟᴇ ᴘʟᴀɴs</u> :
+
+● <code>10₹</code> ➛ <u>ʙʀᴏɴᴢᴇ ᴘʟᴀɴ</u> » <code>7 ᴅᴀʏꜱ</code>
+● <code>630₹</code> ➛ <u>ꜱɪʟᴠᴇʀ ᴘʟᴀɴ</u> » <code>30 ᴅᴀʏꜱ</code>
+● <code>90₹</code> ➛ <u>ɢᴏʟᴅ ᴘʟᴀɴ</u> » <code>90 ᴅᴀʏꜱ</code>
+● <code>150₹</code> ➛ <u>ᴘʟᴀᴛɪɴᴜᴍ ᴘʟᴀɴ</u> » <code>180 ᴅᴀʏꜱ</code>
+● <code>300₹</code> ➛ <u>ᴅɪᴀᴍᴏɴᴅ ᴘʟᴀɴ</u> » <code>365 ᴅᴀʏꜱ</code>
+
+💵 ᴜᴘɪ ɪᴅ (INR)- <code>itsraj3600@oksbi</code>
+💵 PAYPAL (CAD)- <code>https://paypal.me/itsraj3600?country.x=CA&locale.x=en_US</code>
+📸 ǫʀ ᴄᴏᴅᴇ - <a href='https://telegra.ph/PAYMENTS-CENTRE-03-08'>ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ꜱᴄᴀɴ</a>
+
+⚜️ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan
+
+‼️ ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.</b>"""
+
+    PLAN_TXT = """<b>👋 ʜᴇʏ {},
+    
+🎁 <u>ᴘʀᴇᴍɪᴜᴍ ғᴇᴀᴛᴜʀᴇs</u> :
+
+○ ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴏᴘᴇɴ ʟɪɴᴋꜱ
+○ ᴅɪʀᴇᴄᴛ ғɪʟᴇs   
+○ ᴀᴅ-ғʀᴇᴇ ᴇxᴘᴇʀɪᴇɴᴄᴇ 
+○ ʜɪɢʜ-sᴘᴇᴇᴅ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ                         
+○ ᴍᴜʟᴛɪ-ᴘʟᴀʏᴇʀ sᴛʀᴇᴀᴍɪɴɢ ʟɪɴᴋs                           
+○ ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏᴠɪᴇs & sᴇʀɪᴇs                                                                        
+○ ꜰᴜʟʟ ᴀᴅᴍɪɴ sᴜᴘᴘᴏʀᴛ                              
+○ ʀᴇǫᴜᴇsᴛ ᴡɪʟʟ ʙᴇ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ɪɴ 1ʜ [ ɪꜰ ᴀᴠᴀɪʟᴀʙʟᴇ ]
+
+➛ ᴜꜱᴇ /plan ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
+➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan
+
+‼️ ᴀғᴛᴇʀ sᴇɴᴅɪɴɢ ᴀ sᴄʀᴇᴇɴsʜᴏᴛ ᴘʟᴇᴀsᴇ ɢɪᴠᴇ ᴜs sᴏᴍᴇ ᴛɪᴍᴇ ᴛᴏ ᴀᴅᴅ ʏᴏᴜ ɪɴ ᴛʜᴇ ᴘʀᴇᴍɪᴜᴍ ʟɪsᴛ.</b>"""
+
+    FREE_TXT = """<b>👋 ʜᴇʏ {},
+    
+🎉 <u>ꜰʀᴇᴇ ᴛʀɪᴀʟ</u> 🎉
+❗ ᴏɴʟʏ ꜰᴏʀ 5 ᴍɪɴᴜᴛᴇꜱ
+ 
+○ ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴏᴘᴇɴ ʟɪɴᴋꜱ
+○ ᴍᴜʟᴛɪ-ᴘʟᴀʏᴇʀ sᴛʀᴇᴀᴍɪɴɢ ʟɪɴᴋs
+○ ᴀᴅ-ғʀᴇᴇ ᴇxᴘᴇʀɪᴇɴᴄᴇ
+
+➛ ᴜꜱᴇ /plan ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
+➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan</b>"""
+
+    BRONZE_TXT = """<b>👋 ʜᴇʏ {},
+    
+🥉 <u>ʙʀᴏɴᴄᴇ ᴘʟᴀɴ</u>
+⏰ 7 ᴅᴀʏꜱ
+💸 ᴘʟᴀɴ ᴘʀɪᴄᴇ ➛ 10₹
+
+➛ ᴜꜱᴇ /plan ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
+➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan</b>"""
+
+    SILVER_TXT = """<b>👋 ʜᴇʏ {},
+    
+🥈 <u>ꜱɪʟᴠᴇʀ ᴘʟᴀɴ</u>
+⏰ 30 ᴅᴀʏꜱ 
+💸 ᴘʟᴀɴ ᴘʀɪᴄᴇ ➛ 30₹
+
+➛ ᴜꜱᴇ /plan ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
+➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan</b>"""
+
+    GOLD_TXT = """<b>👋 ʜᴇʏ {},
+    
+🥇 <u>ɢᴏʟᴅ ᴘʟᴀɴ</u>
+⏰ 90 ᴅᴀʏꜱ 
+💸 ᴘʟᴀɴ ᴘʀɪᴄᴇ ➛ 90₹
+
+➛ ᴜꜱᴇ /plan ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
+➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan</b>"""
+
+    PLATINUM_TXT = """<b>👋 ʜᴇʏ {},
+    
+🏅 <u>ᴘʟᴀᴛɪɴᴜᴍ ᴘʟᴀɴ</u>
+⏰ 180 ᴅᴀʏꜱ 
+💸 ᴘʟᴀɴ ᴘʀɪᴄᴇ ➛ 150₹
+
+➛ ᴜꜱᴇ /plan ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
+➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan</b>"""
+    
+    DIAMOND_TXT = """<b>👋 ʜᴇʏ {},
+
+💎 <u>ᴅɪᴀᴍᴏɴᴅ ᴘʟᴀɴ</u>
+⏰ 365 ᴅᴀʏꜱ 
+💸 ᴘʟᴀɴ ᴘʀɪᴄᴇ ➛ 300₹
+
+➛ ᴜꜱᴇ /plan ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
+➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan</b>"""
+
+    OTHER_TXT = """<b>👋 ʜᴇʏ {},
+    
+🎁 <u>ᴏᴛʜᴇʀ ᴘʟᴀɴ</u>
+⏰ ᴄᴜꜱᴛᴏᴍɪꜱᴇᴅ ᴅᴀʏꜱ
+💸 ᴀᴄᴄᴏʀᴅɪɴɢ ᴛᴏ ᴅᴀʏꜱ ʏᴏᴜ ᴄʜᴏᴏꜱᴇ
+
+🏆 ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴀ ɴᴇᴡ ᴘʟᴀɴ ᴀᴘᴀʀᴛ ꜰʀᴏᴍ ᴛʜᴇ ɢɪᴠᴇɴ ᴘʟᴀɴ, ᴛʜᴇɴ ʏᴏᴜ ᴄᴀɴ ᴛᴀʟᴋ ᴛᴏ ᴏᴜʀ <a href='https://t.me/ITS_RAJ3600'>ᴏᴡɴᴇʀ</a> ᴅɪʀᴇᴄᴛʟʏ ʙʏ ᴄʟɪᴄᴋɪɴɢ ᴏɴ ᴛʜᴇ ᴄᴏɴᴛᴀᴄᴛ ʙᴜᴛᴛᴏɴ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ.
+    
+👨‍💻 ᴄᴏɴᴛᴀᴄᴛ ᴛʜᴇ ᴏᴡɴᴇʀ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ᴏᴛʜᴇʀ ᴘʟᴀɴ.
+
+➛ ᴜꜱᴇ /plan ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
+➛ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan</b>"""
+
+    UPI_TXT = """<b>👋 ʜᴇʏ {},
+    
+⚜️ ᴘᴀʏ ᴀᴍᴍᴏᴜɴᴛ ᴀᴄᴄᴏʀᴅɪɴɢ ᴛᴏ ʏᴏᴜʀ ᴘʟᴀɴ ᴀɴᴅ ᴇɴᴊᴏʏ ᴘʀᴇᴍɪᴜᴍ ᴍᴇᴍʙᴇʀꜱʜɪᴘ !
+
+💵 ᴜᴘɪ ɪᴅ - <code>itsraj3600@oksbi</code>
+
+‼️ ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.</b>"""
+
+    QR_TXT = """<b>👋 ʜᴇʏ {},
+    
+⚜️ ᴘᴀʏ ᴀᴍᴍᴏᴜɴᴛ ᴀᴄᴄᴏʀᴅɪɴɢ ᴛᴏ ʏᴏᴜʀ ᴘʟᴀɴ ᴀɴᴅ ᴇɴᴊᴏʏ ᴘʀᴇᴍɪᴜᴍ ᴍᴇᴍʙᴇʀꜱʜɪᴘ !
+
+📸 ǫʀ ᴄᴏᴅᴇ - <a href='https://telegra.ph/PAYMENTS-CENTRE-03-08'>ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ꜱᴄᴀɴ</a>
+
+‼️ ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.</b>"""
+
+    PREPLANS_TXT = """<b>👋 ʜᴇʏ {},
+    
+🎖️ <u>ᴀᴠᴀɪʟᴀʙʟᴇ ᴘʟᴀɴs</u> :
+
+● <code>10₹</code> ➛ <u>ʙʀᴏɴᴢᴇ ᴘʟᴀɴ</u> » <code>7 ᴅᴀʏꜱ</code>
+● <code>30₹</code> ➛ <u>ꜱɪʟᴠᴇʀ ᴘʟᴀɴ</u> » <code>30 ᴅᴀʏꜱ</code>
+● <code>90₹</code> ➛ <u>ɢᴏʟᴅ ᴘʟᴀɴ</u> » <code>90 ᴅᴀʏꜱ</code>
+● <code>150₹</code> ➛ <u>ᴘʟᴀᴛɪɴᴜᴍ ᴘʟᴀɴ</u> » <code>180 ᴅᴀʏꜱ</code>
+● <code>300₹</code> ➛ <u>ᴅɪᴀᴍᴏɴᴅ ᴘʟᴀɴ</u> » <code>365 ᴅᴀʏꜱ</code>
+
+💵 ᴜᴘɪ ɪᴅ (INR)- <code>itsraj3600@oksbi</code>
+💵 PAYPAL (CAD)- <code>https://paypal.me/itsraj3600?country.x=CA&locale.x=en_US</code>
+📸 ǫʀ ᴄᴏᴅᴇ - <a href='https://telegra.ph/PAYMENTS-CENTRE-03-08'>ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ꜱᴄᴀɴ</a>
+
+⚜️ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀᴄᴛɪᴠᴇ ᴘʟᴀɴ ʙʏ ᴜꜱɪɴɢ : /myplan
+
+‼️ ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.</b>"""    
+
+    DEVELOPER_TXT = """
+special Thanks To ❤️ Developer -
+
+-Dev [Owner of this bot ]<a href='https://t.me/ITS_RAJ3600'>RAJ3600</a>
+"""

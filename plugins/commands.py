@@ -176,7 +176,7 @@ async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [
               [
-                  InlineKeyboardButton(f'ᴏᴛᴛ ᴜᴘᴅᴀᴛᴇs​', url='https://t.me/movie_ottupdates'),
+                  InlineKeyboardButton(f'ᴏᴛᴛ ᴜᴘᴅᴀᴛᴇs​', url='https://t.me/cine3600'),
                   InlineKeyboardButton(f'ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/cine3600'),
                   InlineKeyboardButton('ʀᴇᴘᴏ', url='https://github.com/Itsraj3600/cine')
          ]
@@ -199,7 +199,7 @@ async def start(client, message):
             InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
             InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
         ], [
-             InlineKeyboardButton(f'ᴏᴛᴛ ᴜᴘᴅᴀᴛᴇs​', url='https://t.me/movie_ottupdates'),
+             InlineKeyboardButton(f'ᴏᴛᴛ ᴜᴘᴅᴀᴛᴇs​', url='https://t.me/cine3600'),
              InlineKeyboardButton(f'ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/cine3600')
         ],[
             InlineKeyboardButton('ʀᴇᴘᴏ', url='https://github.com/Itsraj3600/cine')
@@ -255,7 +255,7 @@ async def start(client, message):
             InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
             InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
         ],[
-             InlineKeyboardButton(f'ᴏᴛᴛ ᴜᴘᴅᴀᴛᴇs​', url='https://t.me/movie_ottupdates'),
+             InlineKeyboardButton(f'ᴏᴛᴛ ᴜᴘᴅᴀᴛᴇs​', url='https://t.me/cine3600'),
              InlineKeyboardButton(f'ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/cine3600')
         ],[
             InlineKeyboardButton('ʀᴇᴘᴏ', url='https://github.com/Itsraj3600/cine')
