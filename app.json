@@ -1,5 +1,5 @@
 {
-    "name": "shobanafilterbot",
+    "name": "CINE3600FlterBot",
     "description": "When you going to send file on telegram channel this bot will save that in database, So you can search that easily in inline mode",
     "stack": "container",
     "keywords": [
@@ -15,8 +15,8 @@
       "index",
       "inline"
     ],
-    "website": "https://github.com/mn-bots/shobanafilterbot",
-    "repository": "https://github.com/mn-bots/shobanafilterbot",
+    "website": "https://github.com/Itsraj3600/cine",
+    "repository": "https://github.com/Itsraj3600/cine",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token.",

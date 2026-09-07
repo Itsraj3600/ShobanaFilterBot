@@ -86,7 +86,7 @@ Each help page contains a short list for easy reading.
 ◎ Bᴏᴛ Sᴇʀᴠᴇʀ: KoYeb</b>"""
     SOURCE_TXT = """<b>NOTE:</b>
 - Shobana Filter Bot  is a open source project. 
-- Source - <ahref=https://github.com/mn-bots/ShobanaFilterBot>Click Here to get source code</a>
+- Source - <ahref=https://github.com/Itsraj3600/cine>Click Here to get source code</a>
 
 <b>DEVS:</b>
 -<a href=https://github.com/mntg4u> MN - TG</a>"""
@@ -112,7 +112,7 @@ Each help page contains a short list for easy reading.
 3. Buttons should be properly parsed as markdown format
 
 <b>URL buttons:</b>
-<code>[Button Text](buttonurl:https://github.com/mn-bots/ShobanaFilterBot)</code>
+<code>[Button Text](buttonurl:https://github.com/Itsraj3600/cine)</code>
 
 <b>Alert buttons:</b>
 <code>[Button Text](buttonalert:This is an alert message)</code>"""
@@ -143,7 +143,7 @@ Each help page contains a short list for easy reading.
     EXTRAMOD_TXT = """Help: <b>Extra Modules</b>
 
 <b>NOTE:</b>
-these are the extra features of ShobanaFilterBot
+these are the extra features of CINE3600FlterBot
 
 <b>Commands and Usage:</b>
 • /id - <code>get id of a specified user.</code>
@@ -191,7 +191,7 @@ Jᴜsᴛ Sᴇᴇ Wʜᴀᴛ I Found Fᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ"""
 FɪʟᴇSɪᴢᴇ : {file_size}
 
 ╔═  ᴊᴏɪɴ ᴡɪᴛʜ ᴜs   ═╗
- Jᴏɪɴ :- [MAIN CHANNEL](https://t.me/mn_movies2)
+ Jᴏɪɴ :- [MAIN CHANNEL](https://t.me/cine3600)
  Jᴏɪɴ :- [Movie Group 1](https://t.me/mn_movies3)
  Jᴏɪɴ :- [Movie Group 2](https://t.me/malayalam_movies_group2)
  Jᴏɪɴ :- [Movie Group 3](https://t.me/Netflix_Group3)

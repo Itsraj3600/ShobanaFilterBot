@@ -41,7 +41,7 @@ async def password(bot, update):
     # Inline buttons
     btn = InlineKeyboardMarkup([
         [InlineKeyboardButton('MN Bots', url='https://t.me/mnbots'),
-         InlineKeyboardButton('ʀᴇᴘᴏ', url='https://github.com/mn-bots/ShobanaFilterBot')]
+         InlineKeyboardButton('ʀᴇᴘᴏ', url='https://github.com/Itsraj3600/cine')]
     ])
     
     # Edit the message to show the generated password

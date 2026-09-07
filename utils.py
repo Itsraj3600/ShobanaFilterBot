@@ -1,5 +1,5 @@
 #  @MrMNTG @MusammilN
-#please give credits https://github.com/MN-BOTS/ShobanaFilterBot
+#please give credits https://github.com/Itsraj3600/cine
 
 import logging
 from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
@@ -18,7 +18,7 @@ import requests
 from urllib.parse import quote_plus
 
 #  @MrMNTG @MusammilN
-#please give credits https://github.com/MN-BOTS/ShobanaFilterBot
+#please give credits https://github.com/Itsraj3600/cine
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
@@ -47,7 +47,7 @@ class temp(object):
     SETTINGS = {}
 
 #  @MrMNTG @MusammilN
-#please give credits https://github.com/MN-BOTS/ShobanaFilterBot
+#please give credits https://github.com/Itsraj3600/cine
 from pyrogram.enums import ChatMemberStatus
 from database.users_chats_db import db
 from info import REQUEST_FSUB_MODE  # Import from your info.py
@@ -145,7 +145,7 @@ async def create_invite_links(client) -> dict:
     return links
 
 #  @MrMNTG @MusammilN
-#please give credits https://github.com/MN-BOTS/ShobanaFilterBot
+#please give credits https://github.com/Itsraj3600/cine
 
 
 def _get_json(url):

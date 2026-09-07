@@ -30,7 +30,7 @@ class SQLStore:
             pool_timeout=30,
             connect_args={
                 "connect_timeout": 10,
-                "application_name": "ShobanaFilterBot",
+                "application_name": "CINE3600FlterBot",
                 "keepalives": 1,
                 "keepalives_idle": 30,
                 "keepalives_interval": 10,

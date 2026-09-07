@@ -1,5 +1,5 @@
 #  @MrMNTG @MusammilN
-#please give credits https://github.com/MN-BOTS/ShobanaFilterBot
+#please give credits https://github.com/Itsraj3600/cine
 import logging
 from struct import pack
 import re
